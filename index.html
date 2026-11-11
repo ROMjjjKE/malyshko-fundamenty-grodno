@@ -17,7 +17,16 @@ h1{font-size:clamp(2.05rem,5.4vw,4.6rem)}
 .wrap{max-width:1440px;margin-inline:auto;padding-inline:clamp(16px,3.4vw,64px)}
 .top{position:sticky;top:0;z-index:60;background:rgba(232,230,225,.96);border-bottom:1px solid var(--line)}
 .top .in{display:flex;align-items:center;gap:14px;min-height:66px;min-width:0}
-.nav{display:flex;gap:14px;margin-left:auto;font-size:13.5px}
+.top__row{display:flex;align-items:center;gap:12px;min-height:60px;min-width:0}
+.top__sp{flex:1 1 auto;min-width:8px}
+.navbar{border-top:1px solid var(--line2);background:rgba(232,230,225,.98)}
+.navbar{position:relative}
+.navbar::after{content:"";position:absolute;right:0;top:0;bottom:0;width:30px;pointer-events:none;
+background:linear-gradient(90deg,rgba(232,230,225,0),rgba(232,230,225,.97))}
+@media (min-width:860px){.navbar::after{display:none}}
+.navbar__in{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.navbar a{flex:none;font-family:var(--f-m);font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;padding:12px 11px;white-space:nowrap;border-bottom:2px solid transparent;color:var(--ink2)}
+.navbar a[aria-current="page"]{color:var(--blue);border-color:var(--blue)}
 .burger{display:none;margin-left:auto;width:44px;height:38px;border:1px solid var(--ink);background:none;flex-direction:column;gap:5px;align-items:center;justify-content:center;padding:0}
 .burger span{width:20px;height:2px;background:var(--ink);display:block}
 .btn{display:inline-flex;align-items:center;justify-content:center;font-family:var(--f-m);font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;
@@ -35,20 +44,24 @@ padding:14px 18px;border:1px solid var(--ink);background:var(--ink);color:var(--
 .fbar a{flex:1;text-align:center;padding:10px 4px;font-family:var(--f-m);font-size:10.5px;text-transform:uppercase;border:1px solid var(--ink);color:var(--ink)}
 .fbar a:first-child{background:var(--blue);border-color:var(--blue);color:#fff}
 @media (max-width:859px){.fbar{display:flex}body{padding-bottom:62px}}
-@media (max-width:1079px){.nav,.tel{display:none}.burger{display:flex}}
+@media (max-width:859px){.top .tel{display:none}.burger{display:flex}}
 </style>
-<link rel="stylesheet" href="assets/css/site.v1.css">
+<link rel="stylesheet" href="assets/css/site.v2.css">
 </head><body id="top">
-<header class="top"><div class="wrap in">
-  <a class="brand" href="index.html"><b>Малышко</b><span>от фундамента до кровли · Гродно</span></a>
-  <nav class="nav" aria-label="Основная навигация"><a href="fundamenty.html"Фундамент></a><a href="dom.html"Дом до кровли></a><a href="krovlya.html"Кровля></a><a href="gruzoperevozki.html"Перевозки></a><a href="miniekskavator.html"Экскаватор></a><a href="evakuator.html"Эвакуатор></a><a href="raboty.html"Работы></a><a href="o-kompanii.html"О нас></a></nav>
-  <a class="tel" href="tel:+375298843568">+375 (29) 884-35-68</a>
-  <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
-</div></header>
+<header class="top">
+  <div class="wrap top__row">
+    <a class="brand" href="index.html"><b>Малышко</b><span>от фундамента до кровли · Гродно</span></a>
+    <span class="top__sp"></span>
+    <a class="tel" href="tel:+375298843568">+375 (29) 884-35-68</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="navbar" aria-label="Страницы сайта"><div class="wrap navbar__in"><a href="fundamenty.html">Фундаменты</a><a href="dom.html">Дом до кровли</a><a href="krovlya.html">Кровля</a><a href="gruzoperevozki.html">Перевозки</a><a href="miniekskavator.html">Экскаватор</a><a href="evakuator.html">Эвакуатор</a><a href="raboty.html">Работы</a><a href="o-kompanii.html">О нас</a><a href="kontakty.html">Контакты</a></div></nav>
+</header>
 <div class="drawer" id="drawer" hidden><div class="drawer__in" role="dialog" aria-modal="true" aria-label="Меню сайта">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
     <span class="mono">Меню</span><button class="drawer__x" id="drawerClose" aria-label="Закрыть меню">×</button></div>
-  <a class="dl" href="fundamenty.html">Фундамент</a><a class="dl" href="dom.html">Дом до кровли</a><a class="dl" href="krovlya.html">Кровля</a><a class="dl" href="gruzoperevozki.html">Перевозки</a><a class="dl" href="miniekskavator.html">Экскаватор</a><a class="dl" href="evakuator.html">Эвакуатор</a><a class="dl" href="raboty.html">Работы</a><a class="dl" href="o-kompanii.html">О нас</a>
+  <a class="dl" href="fundamenty.html">Фундаменты</a><a class="dl" href="dom.html">Дом до кровли</a><a class="dl" href="krovlya.html">Кровля</a><a class="dl" href="gruzoperevozki.html">Перевозки</a><a class="dl" href="miniekskavator.html">Экскаватор</a><a class="dl" href="evakuator.html">Эвакуатор</a><a class="dl" href="raboty.html">Работы</a><a class="dl" href="o-kompanii.html">О нас</a><a class="dl" href="kontakty.html">Контакты</a>
+  <a class="dl" href="politika.html">Политика конфиденциальности</a>
   <a class="btn btn--blue" href="tel:+375298843568" style="margin-top:16px">+375 (29) 884-35-68</a>
   <a class="btn btn--ghost" href="https://wa.me/375298843568" target="_blank" rel="noopener" style="margin-top:8px">WhatsApp</a>
 </div></div>
@@ -164,7 +177,7 @@ padding:14px 18px;border:1px solid var(--ink);background:var(--ink);color:var(--
   <div><h4>ИП Малышко П. Г.</h4>
     <p>Гродно: монолитные фундаменты и бетонные работы, дом от фундамента до кровли, монтаж кровли, грузоперевозки, услуги мини-экскаватора и эвакуатора. Опыт больше 10 лет, своя опалубка.</p>
     <a href="tel:+375298843568" style="font-family:var(--f-m);font-size:17px;color:#fff">+375 (29) 884-35-68</a></div>
-  <div><h4>Направления</h4><a href="fundamenty.html">Фундамент</a><a href="dom.html">Дом до кровли</a><a href="krovlya.html">Кровля</a><a href="gruzoperevozki.html">Перевозки</a><a href="miniekskavator.html">Экскаватор</a><a href="evakuator.html">Эвакуатор</a><a href="raboty.html">Работы</a><a href="o-kompanii.html">О нас</a></div>
+  <div><h4>Направления</h4><a href="fundamenty.html">Фундаменты</a><a href="dom.html">Дом до кровли</a><a href="krovlya.html">Кровля</a><a href="gruzoperevozki.html">Перевозки</a><a href="miniekskavator.html">Экскаватор</a><a href="evakuator.html">Эвакуатор</a><a href="raboty.html">Работы</a><a href="o-kompanii.html">О нас</a><a href="kontakty.html">Контакты</a></div>
   <div><h4>Связь</h4><a href="tel:+375298843568">+375 (29) 884-35-68</a><a href="https://wa.me/375298843568" target="_blank" rel="noopener">WhatsApp</a>
     <p>ул. Домейко, 47, Гродно</p><p class="mono" style="color:#7F7A99;font-size:10px;line-height:1.5">Работаем в Гродно и области. Выезд на объект и консультация.</p></div>
   <div class="foot__bt"><span class="mono" style="color:#7F7A99">© 2026 ИП Малышко П. Г.</span>
@@ -176,5 +189,5 @@ padding:14px 18px;border:1px solid var(--ink);background:var(--ink);color:var(--
   <a href="viber://chat?number=%2B375298843568">Viber</a>
   <a href="https://t.me/+375298843568" target="_blank" rel="noopener">Telegram</a>
 </div>
-<script src="assets/js/main.v1.js" defer></script>
+<script src="assets/js/main.v2.js" defer></script>
 </body></html>
